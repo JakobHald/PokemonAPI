@@ -1,22 +1,27 @@
-import { useState } from "react";
-import styles from "./counter.module.css"
+import { useEffect } from "react";
+import styles from "./counter.module.css";
 
-const Counter = ({pokeCount, setPokeCount}) => {
+const Counter = ({ setPokeCount }) => {
+    
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "ArrowDown") {
+                setPokeCount((count) => (count >= 4 ? 0 : count + 1));
+            } else if (event.key === "ArrowUp") {
+                setPokeCount((count) => (count <= 0 ? 4 : count - 1));
+            }
+        };
 
-    if(pokeCount > 4){
-        setPokeCount(0)
-    } else if (pokeCount < 0){
-        setPokeCount(4)
-    }
 
-    return (
-        <div>
-            <h1>{pokeCount}</h1>
-            <button onClick={ () => setPokeCount(pokeCount + 1)}>Counter OP</button>
-            <br />
-            <button onClick={ () => setPokeCount(pokeCount - 1)}>Counter NED</button>
-        </div>
-    )
-}
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+        
+    }, [setPokeCount]);
+
+    
+};
 
 export default Counter;

@@ -3,12 +3,13 @@ import PokemonListItem from "../pokemonListItem/PokemonListItem";
 import styles from './pokemonList.module.css';
 import Counter from "../counter/Counter";
 
-const POKEMON_API_URL = "https://pokeapi.co/api/v2/pokemon?limit=500";
+const POKEMON_API_URL = "https://pokeapi.co/api/v2/pokemon?limit=5";
 
 const PokemonList = () => {
     const [pokemon, setPokemon] = useState([]);
     const [pokeCount, setPokeCount] = useState(0)
 
+    console.log(pokeCount)
 
 
     useEffect(() => {
@@ -43,6 +44,7 @@ const PokemonList = () => {
                     <PokemonListItem pokeCount={pokeCount} index={index} key={pokemon.name} pokemon={pokemon} />
                 ))}
             </div>
+            
         </>
     );
 };
