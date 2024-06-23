@@ -1,5 +1,6 @@
 import { useRoutes } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
+import PokemonDetails from "./pages/pokemonDetails/PokemonDetails";
 
 
 function App() {
@@ -9,6 +10,10 @@ function App() {
       path: "/",
       element : <HomePage></HomePage>
     },
+    {
+      path: "/pokemon/:name",
+      element : <PokemonDetails></PokemonDetails>
+    }
   ]);
 
 

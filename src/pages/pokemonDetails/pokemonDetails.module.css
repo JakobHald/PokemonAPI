@@ -1,0 +1,17 @@
+.pokemonDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    p{
+        color: white;
+    }
+    
+    img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+

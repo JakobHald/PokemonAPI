@@ -1,9 +1,14 @@
-import McInfoCard from "../../components/mc/McInfoCard/McInfoCard";
+import PokemonList from "../../components/pokemonList/PokemonList";
+import styles from './homepage.module.css';
 
 const HomePage = () => {
+
+
     return (
         <div className={"center-page"}>
-            <McInfoCard></McInfoCard>
+            <div className={styles.pokemonBox}>
+                <PokemonList></PokemonList>
+            </div>
         </div>
     );
 };

@@ -1,0 +1,74 @@
+
+.pokemonListItem {
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 700px;
+    height: 100px;
+    background-color: #88f8f0;
+    clip-path: polygon(50% 0, 95% 0, 100% 35%, 100% 70%, 95% 100%, 50% 100%, 5% 100%, 0% 70%, 0% 35%, 5% 0);
+    a{
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        line-height: 0.5;
+        z-index: 999;
+        text-transform: capitalize;
+        position: relative;
+        
+        img{
+            height: 100px;
+            width: auto;
+            top: 0;
+            left: 50px;
+            position: absolute;
+        }
+        
+        .nameBox{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .infoContainer{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nameContainer{
+            position: absolute;
+            left: 180px;
+            top: 0;
+        }
+
+        .statsBox{
+            width: 150px;
+            position: absolute;
+            right: 50px;
+        }
+    }
+}
+
+.pokemonListItem::after{
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 690px;
+    height: 90px;
+    background: linear-gradient(-45deg,  #0a233b 0%,#0a233b 45%, #0a3c5a 45%,#0a3c5a 100%);
+    clip-path: polygon(50% 0, 95% 0, 100% 35%, 100% 70%, 95% 100%, 50% 100%, 5% 100%, 0% 70%, 0% 35%, 5% 0);
+}
+
+
+.active{
+    scale: 1.1;
+}
